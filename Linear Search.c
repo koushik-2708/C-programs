@@ -1,31 +1,24 @@
-#include <stdio.h>
-int main() {
-  int i,n, key, pos=0, mid = 0, low = 0;
- printf("enter n value");
- scanf("%d", &n);
- int a[n];
- int high=n-1;
- for (i = 0; i < n; i++) {
- scanf("%d", &a[i]);
- }
- printf("enter key");
- scanf("%d", &key);
- while (low <=high)
-  {
-    mid = (low + high) / 2;
-  if (key==a[mid]) 
-  {
-     pos = mid;
-     break;
- }
-else if (key <a[mid]) {
-      high = mid-1;
+# include <stdio.h>
+int main ()
+{
+int a[20] ,i,key ,n, found=0,position;
+printf("How many elements ?");
+scanf ("%d" ,&n);
+printf("Enter array elements :\n");
+for(i =0;i<n ;++ i)
+  { scanf ("%d" ,&a[i]);
 }
-else {
- low= mid+1;
- }
-  }
- printf("element found at position %d", pos);
-return 0;
+printf ("\nEnter element to search :");
+scanf("%d" ,&key );
+for (i =0;i<n ;i++)
+{   
+if(key==a[i] )
+	{   found=1;
+    	position=i;  
+	}
 }
-
+if(found==1)
+printf(" Element found at index %d", position);
+else
+printf(" Element not found ");
+}
